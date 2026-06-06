@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(const MyApp());
 
@@ -16,12 +17,16 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: SingleChildScrollView(
             child: Column(
+              
+              
               children: [ // <-- ESTA LÍNEA ES LA QUE DABA EL ERROR
-
-                // 1. CENTRO HISTÓRICO DE QUITO
+              
+              // 1. CENTRO HISTÓRICO DE QUITO
                 const ImageSection(image: 'images/centro_hisorico.jpg'),
                 const TitleSection(name: 'Centro Histórico', location: 'UIO'),
-                const ButtonSection(),
+                const ButtonSection(
+                  mapsUrl: 'https://maps.app.goo.gl/YiqePCrFBHuFXv9D6'
+                ),
                 const TextSection(
                   description: 'El primer Patrimonio Cultural de la Humanidad. Una joya arquitectónica colonial repleta de iglesias históricas, plazas llenas de vida y el imponente mirador de El Panecillo.',
                 ),
@@ -29,7 +34,9 @@ class MyApp extends StatelessWidget {
                 // 2. ISLAS GALÁPAGOS
                 const ImageSection(image: 'images/galapagos.jpg'),
                 const TitleSection(name: 'Islas Galápagos', location: 'GLP'),
-                const ButtonSection(),
+                const ButtonSection(
+                  mapsUrl: 'https://maps.app.goo.gl/XnKFFZi5bUh5moSA6',
+                ),
                 const TextSection(
                   description: 'Un santuario natural único en el mundo. Famoso por su biodiversidad excepcional, tortugas gigantes, iguanas marinas y playas de arena blanca que inspiraron a Charles Darwin.',
                 ),
@@ -37,7 +44,9 @@ class MyApp extends StatelessWidget {
                 // 3. PARQUE NACIONAL COTOPAXI
                 const ImageSection(image: 'images/cotopaxi.jpg'),
                 const TitleSection(name: 'Parque Nacional Cotopaxi', location: 'UIO'),
-                const ButtonSection(),
+                const ButtonSection(
+                  mapsUrl: 'https://maps.app.goo.gl/DAYfZ31c3Mzrh9dm8',
+                ),
                 const TextSection(
                   description: 'Hogar de uno de los volcanes activos más altos y simétricos del planeta. Un paisaje andino espectacular ideal para el senderismo, el ciclismo de montaña y la fotografía.',
                 ),
@@ -45,7 +54,7 @@ class MyApp extends StatelessWidget {
                 // 4. BAÑOS DE AGUA SANTA
                 const ImageSection(image: 'images/banos.jpg'),
                 const TitleSection(name: 'Baños de Agua Santa', location: 'TUN'),
-                const ButtonSection(),
+                const ButtonSection(mapsUrl: 'https://maps.app.goo.gl/3UYiS4yRnUbequ2H7',),
                 const TextSection(
                   description: 'La capital de la aventura en Ecuador. Destaca por sus cascadas imponentes como el Pailón del Diablo, aguas termales relajantes y columpios al borde de abismos andinos.',
                 ),
@@ -53,7 +62,7 @@ class MyApp extends StatelessWidget {
                 // 5. CUENCA HISTÓRICA
                 const ImageSection(image: 'images/centro_cuenca.jpg'),
                 const TitleSection(name: 'Centro Histórico de Cuenca', location: 'CUE'),
-                const ButtonSection(),
+                const ButtonSection(mapsUrl: 'https://maps.app.goo.gl/WZ953YdmCdjmzjXd9',),
                 const TextSection(
                   description: 'Ciudad colonial cruzada por cuatro ríos pintorescos. Famosa por su majestuosa Catedral de la Inmaculada Concepción, calles de adoquines y artesanías tradicionales.',
                 ),
@@ -61,7 +70,9 @@ class MyApp extends StatelessWidget {
                 // 6. MALECÓN 2000
                 const ImageSection(image: 'images/malecon.jpg'),
                 const TitleSection(name: 'Malecón 2000', location: 'GYE'),
-                const ButtonSection(),
+                const ButtonSection(
+                  mapsUrl: 'https://maps.app.goo.gl/69DWjn8Py8hbYmwJ6',
+                ),
                 const TextSection(
                   description: 'Un moderno paseo fluvial a orillas del Río Guayas. Cuenta con monumentos históricos, jardines públicos, centros comerciales y una gran rueda moscovita con vistas a la ciudad.',
                 ),
@@ -69,7 +80,8 @@ class MyApp extends StatelessWidget {
                 // 7. MERCADO DE OTAVALO
                 const ImageSection(image: 'images/mercado_otavalo.jpg'),
                 const TitleSection(name: 'Mercado de Otavalo', location: 'IMB'),
-                const ButtonSection(),
+                const ButtonSection(
+                  mapsUrl: 'https://maps.app.goo.gl/dyeANiBcnTgasdDZA'),
                 const TextSection(
                   description: 'La Plaza de Ponchos es el mercado artesanal indígena más grande de Sudamérica. Un festival de colores lleno de textiles tejidos a mano, joyas y arte folclórico local.',
                 ),
@@ -77,7 +89,7 @@ class MyApp extends StatelessWidget {
                 // 8. LAGUNA DE QUILOTOA
                 const ImageSection(image: 'images/quilotoa.jpg'),
                 const TitleSection(name: 'Laguna de Quilotoa', location: 'UIO'),
-                const ButtonSection(),
+                const ButtonSection(mapsUrl: 'https://maps.app.goo.gl/arBLr4FnMosLuB4y5',),
                 const TextSection(
                   description: 'Un cráter volcánico colapsado que alberga una laguna de aguas turquesas brillantes. Ofrece caminatas desafiantes a lo largo del borde y vistas panorámicas de los Andes.',
                 ),
@@ -85,7 +97,7 @@ class MyApp extends StatelessWidget {
                 // 9. PARQUE NACIONAL YASUNÍ
                 const ImageSection(image: 'images/yasuni.jpg'),
                 const TitleSection(name: 'Reserva Nacional Yasuní', location: 'NAP'),
-                const ButtonSection(),
+                const ButtonSection(mapsUrl: 'https://maps.app.goo.gl/muvzssnH21EkBQ6b7',),
                 const TextSection(
                   description: 'Uno de los lugares con mayor biodiversidad por metro cuadrado en todo el planeta. Una densa selva amazónica hogar de miles de especies y comunidades ancestrales.',
                 ),
@@ -93,7 +105,7 @@ class MyApp extends StatelessWidget {
                 // 10. PLAYA DE MONTAÑITA
                 const ImageSection(image: 'images/playa.jpg'),
                 const TitleSection(name: 'Playa de Montañita', location: 'GYE'),
-                const ButtonSection(),
+                const ButtonSection(mapsUrl: 'https://maps.app.goo.gl/xYwPjeFkDeF7kmqz9',),
                 const TextSection(
                   description: 'Epicentro del surf y la vida nocturna en la costa ecuatoriana. Atrae a viajeros internacionales gracias a sus olas consistentes, ambiente bohemio y cabañas rústicas.',
                 ),
@@ -142,8 +154,15 @@ class TitleSection extends StatelessWidget {
 }
 
 class ButtonSection extends StatelessWidget {
-  const ButtonSection({super.key});
-
+  //Se crea el atributo de mapsurl
+  final String mapsUrl;
+  // Se agrega maps url al constructor para que el objeto se cre con un valor
+  const ButtonSection({super.key, required this.mapsUrl});
+//
+  Future<void> _openMaps() async{
+    final Uri url = Uri.parse(mapsUrl);
+    await launchUrl(url, mode: LaunchMode.externalApplication);
+  }
   @override
   Widget build(BuildContext context) {
     final Color color = Theme.of(context).primaryColor;
@@ -151,7 +170,8 @@ class ButtonSection extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         ButtonWithText(color: color, icon: Icons.call, label: 'CALL'),
-        ButtonWithText(color: color, icon: Icons.near_me, label: 'ROUTE'),
+        GestureDetector(onTap:_openMaps, 
+        child: ButtonWithText(color: color, icon: Icons.near_me, label: 'ROUTE'),),
         ButtonWithText(color: color, icon: Icons.share, label: 'SHARE'),
       ],
     );
