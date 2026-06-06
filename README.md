@@ -28,7 +28,7 @@ Además, la aplicación permite marcar lugares turísticos como favoritos para a
 
 *Inserte aquí la captura de la aplicación mostrando la lista de lugares turísticos.*
 
-![Pantalla Principal](images/captura_principal.png)
+![Pantalla Principal](https://raw.githubusercontent.com/GabrielEsc23/Actividad_en_clase_Flutter/main/Capturas_app_turistica/pantalla-inicial.jpg)
 
 ---
 
@@ -36,7 +36,8 @@ Además, la aplicación permite marcar lugares turísticos como favoritos para a
 
 *Inserte aquí la captura mostrando un lugar marcado como favorito.*
 
-![Favoritos](images/captura_favoritos.png)
+![Favoritos](https://raw.githubusercontent.com/GabrielEsc23/Actividad_en_clase_Flutter/main/Capturas_app_turistica/favoritos.jpg)
+
 
 ---
 
@@ -44,7 +45,7 @@ Además, la aplicación permite marcar lugares turísticos como favoritos para a
 
 *Inserte aquí la captura mostrando la apertura de la ubicación en Google Maps.*
 
-![Google Maps](images/captura_google_maps.png)
+![Google Maps](https://raw.githubusercontent.com/GabrielEsc23/Actividad_en_clase_Flutter/main/Capturas_app_turistica/googl-maps.jpg)
 
 ## Instalación
 
